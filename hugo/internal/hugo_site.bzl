@@ -81,7 +81,7 @@ def _hugo_site_impl(ctx):
             ctx.actions.run_shell(
                 inputs = [i],
                 outputs = [o],
-                command = 'cp -r "$1" "$2"',
+                command = 'cp -L -r "$1" "$2"',
                 arguments = [i.path, o.path],
             )
             hugo_inputs.append(o)
